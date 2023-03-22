@@ -2,6 +2,7 @@ const { title, description, version } = require('./package.json');
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 1886;
 const NO_TILE = 'no_tile.png';
@@ -9,6 +10,7 @@ const MBTiles = require('./src/MBTiles');
 const LocalTiles = require('./src/LocalTiles');
 const EventLogger = require('./win_service/EventLogger');
 
+app.use(cors());
 app.get('/mbtiles', async (req, res) => {
   try {
     const info = await MBTiles.getInfoAsHtmlAsync(title);

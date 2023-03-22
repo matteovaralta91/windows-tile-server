@@ -1,4 +1,4 @@
-# Windows Tile Server
+# Windows Tile Server with CORS
 
 Designed for serving map tiles stored in files with XYZ schema or MBTiles. Windows Tile Server can be used as a HTTP server. When the server is running you can access the tiles from different mapping applications.
 
