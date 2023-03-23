@@ -95,7 +95,7 @@ iface.reloadConnections()</code></pre>`;
   getTile({ tilesRoot, z, x, y }) {
     // if y is {y}.png
     const data = y.split('.');
-    const extension = data[1] || 'png';
+    const extension = data[1] || 'jpg';
     y = data[0];
 
     // if y is negative it is asumed that your app is using TMS schema
