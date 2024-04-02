@@ -35,10 +35,10 @@ app.get('/mbtiles/:file/:z/:x/:y', async (req, res) => {
       if (tile) {
         res.send(tile);
       } else {
-        res.sendFile(NO_TILE, { root: path.join(__dirname, '/public') });
+        res.status(404).json({ error: err.toLocaleString() });
       }
     } else {
-      res.sendFile(NO_TILE, { root: path.join(__dirname, '/public') });
+      res.status(404).json({ error: err.toLocaleString() });
     }
   } catch (err) {
     EventLogger.error(`app.get(/mbtiles/x/y/z): ${err}`);
